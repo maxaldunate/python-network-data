@@ -19,8 +19,8 @@ stuff = ET.fromstring(xml_data)
 lst = stuff.findall('users/user')
 print('User count:', len(lst))
 
-for item in lst:
+for user in lst:
     print()
-    print('Name', item.find('name').text)
-    print('Id  ', item.find('id').text)
-    print('Attr', item.get('x'))
+    print('Name', user.find('name').text)
+    print('Id  ', user.find('id').text)
+    print('Attr', user.get('x'))
