@@ -1,3 +1,4 @@
 # build products...
 *.py[co]
 .idea/
+wk6/hidden.py
