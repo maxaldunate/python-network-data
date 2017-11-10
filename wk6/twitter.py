@@ -1,6 +1,8 @@
 import urllib.request, urllib.parse, urllib.error
 import twurl
 import ssl
+import json
+
 
 # https://apps.twitter.com/
 # Create App and get the four strings, put them in hidden.py
@@ -22,6 +24,14 @@ while True:
     connection = urllib.request.urlopen(url, context=ctx)
     data = connection.read().decode()
     print(data[:250])
+
+    try:
+        js = json.loads(data)
+        print(json.dumps(js, indent=4))
+    except:
+        js = None
+
+
     headers = dict(connection.getheaders())
     # print headers
     print('Remaining', headers['x-rate-limit-remaining'])
